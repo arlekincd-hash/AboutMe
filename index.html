@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Денис Сафронов — AI-медиа, нейросети, тренинги</title>
+
+<meta name="description" content="Денис Сафронов, Рязань. AI-медиагенерация, обучение нейросетям, бизнес-тренинги (hard & soft skills) и методология контента.">
+<meta property="og:title" content="Денис Сафронов">
+<meta property="og:description" content="AI-медиагенерация · Обучение нейросетям · Бизнес-тренинги · Методология">
+<meta property="og:image" content="profile.jpg">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c96f4a'/><path d='M16 8 v16 M8 16 h16' stroke='%23f4f1ea' stroke-width='3.5' stroke-linecap='round'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+<canvas id="leaves" class="vibe-canvas"></canvas>
+
+<!-- 🎛️ ПЕРЕКЛЮЧАТЕЛИ ВАЙБА (правый верхний угол) -->
+<div class="vibe-switch" id="vibeSwitch">
+  <button class="vibe-btn" data-mode="leaves" data-tip="Листья" aria-label="Листья">
+    <svg viewBox="0 0 24 24"><path d="M12 3c5 0 8 3 8 8 0 5-4 9-9 9-1 0-2-1-2-2 0-5 1-11 3-15z"/><path d="M9 18c0-4 2-8 5-11"/></svg>
+  </button>
+  <button class="vibe-btn" data-mode="spheres" data-tip="Сферы" aria-label="Сферы">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="9" r="2.5"/></svg>
+  </button>
+  <button class="vibe-btn" data-mode="stars" data-tip="Звёзды и облака" aria-label="Звёзды и облака">
+    <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/></svg>
+  </button>
+  <button class="vibe-btn" data-mode="constellation" data-tip="Созвездия" aria-label="Созвездия">
+    <svg viewBox="0 0 24 24"><circle cx="5" cy="7" r="1.4"/><circle cx="12" cy="5" r="1.4"/><circle cx="19" cy="10" r="1.4"/><circle cx="9" cy="16" r="1.4"/><circle cx="17" cy="18" r="1.4"/><path d="M5 7l7-2 7 5M12 5L9 16l8 2"/></svg>
+  </button>
+  <div class="vibe-sep"></div>
+  <button class="vibe-btn power" id="vibePower" data-tip="Вкл / выкл" aria-label="Включить или выключить">
+    <svg viewBox="0 0 24 24"><path d="M12 4v8"/><path d="M7.5 7a7 7 0 1 0 9 0"/></svg>
+  </button>
+</div>
+
+<!-- НАВИГАЦИЯ -->
+<nav>
+  <div class="logo">Денис <b>Сафронов</b></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#directions" onclick="closeMenu()">Направления</a></li>
+    <li><a href="#about" onclick="closeMenu()">Обо мне</a></li>
+    <li><a href="#works" onclick="closeMenu()">Работы</a></li>
+    <li><a href="#contacts" onclick="closeMenu()">Контакты</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="burger" onclick="toggleMenu()" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1 class="name"><span class="w1">Денис</span> <span class="w2">Сафронов</span></h1>
+  <p class="role"><b>AI-медиагенерация</b> · Обучение нейросетям · Бизнес-тренинги · Методология</p>
+  <p class="place">📍 Рязань · 10+ лет в обучении и методологии</p>
+</header>
+
+<main>
+
+  <!-- НАПРАВЛЕНИЯ -->
+  <section id="directions">
+    <div class="s-head">
+      <div class="kicker">Что я делаю</div>
+      <h2>Направления</h2>
+    </div>
+    <div class="grid">
+
+      <div class="dir">
+        <span class="num">01</span>
+        <div class="ic-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#gr)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e08b64"/><stop offset="1" stop-color="#6db392"/></linearGradient></defs>
+            <rect x="3" y="4" width="18" height="14" rx="2"/><circle cx="8.5" cy="9" r="1.8"/><path d="M4 16l4.5-4 3 2.5L16 10l4 4"/>
+          </svg>
+        </div>
+        <h3>AI-медиагенерация</h3>
+        <p>Фото, видео и музыка с помощью нейросетей — визуальный контент под ваши задачи.</p>
+      </div>
+
+      <div class="dir">
+        <span class="num">02</span>
+        <div class="ic-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#gr2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs><linearGradient id="gr2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e08b64"/><stop offset="1" stop-color="#6db392"/></linearGradient></defs>
+            <rect x="6" y="8" width="12" height="9" rx="2.5"/><path d="M12 8V4M12 4h2.5"/><circle cx="12" cy="3" r="1.3"/><path d="M9.5 12v1.5M14.5 12v1.5M6 12.5H3.5M18 12.5h2.5"/>
+          </svg>
+        </div>
+        <h3>Обучение нейросетям</h3>
+        <p>Тренинги по работе с ИИ — от основ до продвинутых приёмов для бизнеса и творчества.</p>
+      </div>
+
+      <div class="dir">
+        <span class="num">03</span>
+        <div class="ic-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#gr3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs><linearGradient id="gr3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e08b64"/><stop offset="1" stop-color="#6db392"/></linearGradient></defs>
+            <path d="M12 4l8 3.5-8 3.5-8-3.5L12 4z"/><path d="M7 9.5v4c0 1.5 2.5 2.5 5 2.5s5-1 5-2.5v-4"/><path d="M20 7.5v4.5"/>
+          </svg>
+        </div>
+        <h3>Бизнес-тренинги</h3>
+        <p>Hard и soft skills — для линейного персонала и руководителей. Более 10 лет практики.</p>
+      </div>
+
+      <div class="dir">
+        <span class="num">04</span>
+        <div class="ic-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#gr4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs><linearGradient id="gr4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e08b64"/><stop offset="1" stop-color="#6db392"/></linearGradient></defs>
+            <rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>
+          </svg>
+        </div>
+        <h3>Методология и контент</h3>
+        <p>Слайды, презентации к тренингам и продуктовые методические материалы.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ОБО МНЕ -->
+  <section id="about">
+    <div class="about">
+      <div class="about-photo"><img src="profile.jpg" alt="Денис Сафронов"></div>
+      <div class="about-text">
+        <div class="s-head" style="margin-bottom:24px">
+          <div class="kicker">Обо мне</div>
+          <h2>Немного о себе</h2>
+        </div>
+        <p>Меня зовут <b>Денис Сафронов</b>, я из Рязани. Более 10 лет в обучении и методологии.</p>
+        <p>Создаю визуальный контент с помощью нейросетей, обучаю работе с ИИ, провожу бизнес-тренинги по hard и soft skills и разрабатываю методические материалы.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- РАБОТЫ (карусель рендерится из works.js) -->
+  <section id="works">
+    <div class="s-head">
+      <div class="kicker">Портфолио</div>
+      <h2>Работы</h2>
+    </div>
+
+    <div class="works-carousel">
+      <button class="carousel-arrow prev" id="carPrev" aria-label="Назад">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carTrack"><!-- карточки вставит works.js --></div>
+      </div>
+      <button class="carousel-arrow next" id="carNext" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="carousel-dots" id="carDots"></div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section id="contacts" class="contacts">
+    <div class="s-head" style="text-align:center">
+      <div class="kicker">Связаться</div>
+      <h2>Контакты</h2>
+    </div>
+    <p>Напишите мне — обсудим ваш проект, обучение или тренинг.</p>
+    <div class="cbtns">
+      <a class="primary" href="https://telegram.me/SDM_ryazan" target="_blank">✈️ Telegram</a>
+      <a class="ghost" href="https://asix.space/creator/denis_s" target="_blank">🔗 asix.space</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Денис Сафронов · Рязань</footer>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <span class="x">&times;</span>
+  <img id="modalImg" src="" alt="">
+</div>
+
+<!-- сначала данные работ, потом вся механика -->
+<script src="works.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
