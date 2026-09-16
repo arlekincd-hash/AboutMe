@@ -243,16 +243,6 @@ section{padding:70px clamp(16px,5vw,60px);max-width:1200px;margin:0 auto}
 .work-body h3{font-size:1.15rem;margin-bottom:4px}
 .work-body p{font-size:.86rem;color:var(--muted)}
 
-/* Кнопка "Еще больше слайдов..." */
-.extra-slides-btn{
-  display:inline-block;margin-top:10px;padding:6px 12px;
-  font-size:.78rem;font-weight:500;color:#c96f4a;
-  background:rgba(201,111,74,.08);border:1px solid rgba(201,111,74,.25);
-  border-radius:8px;text-decoration:none;transition:.2s;
-  transform:translateZ(15px)
-}
-.extra-slides-btn:hover{background:rgba(201,111,74,.18);color:#a55a3e}
-
 .work-badge{
   position:absolute;top:12px;left:12px;z-index:4;
   font-size:.72rem;font-weight:600;letter-spacing:.3px;
@@ -295,9 +285,28 @@ section{padding:70px clamp(16px,5vw,60px);max-width:1200px;margin:0 auto}
   background:rgba(255,255,255,.25);transition:.3s;padding:0
 }
 .carousel-dots button.active{background:var(--terra);width:26px;border-radius:6px}
+
+/* Кнопки под каруселью */
+.extra-links-container{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  margin-top:16px
+}
+.extra-link-btn{
+  padding:10px 18px;font-size:.85rem;font-weight:500;
+  color:#c96f4a;background:rgba(201,111,74,.08);
+  border:1px solid rgba(201,111,74,.25);
+  border-radius:10px;text-decoration:none;transition:.25s
+}
+.extra-link-btn:hover{
+  background:rgba(201,111,74,.18);color:#a55a3e;
+  transform:translateY(-2px)
+}
+
 @media(max-width:600px){
   .work-card{flex:0 0 78vw;max-width:78vw}
   .carousel-arrow{display:none}
+  .extra-links-container{flex-direction:column;align-items:center;gap:10px}
+  .extra-link-btn{width:100%;max-width:280px;text-align:center}
 }
 
 /* ============================================================
