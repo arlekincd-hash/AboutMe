@@ -23,7 +23,8 @@ const WORKS = [
     img:   "slide.jpg",
     title: "Слайды",
     text:  "Пример оформления слада для продуктовой презентации",
-    badge: "AI-слайд"
+    badge: "AI-слайд",
+    extraLink: "https://docs.google.com/presentation/d/1T06pkT9g7ldfGTAKIb0vmP49MT40ZkgRqZ1oJT_3q0I/edit?usp=sharing"
   },
 
   {
@@ -59,6 +60,24 @@ const WORKS = [
     text:  "Видео собранное с помощью ИИ-инструментов.",
     badge: "Видео",
     link:  "https://asix.space/videos/971?ref=jkwtxsd2"     // ← сюда вставь ссылку на своё видео
+  },
+
+  {
+    type:  "video",
+    img:   "profile.jpg",
+    title: "Еще больше работ",
+    text:  "Портфолио и проекты на asix.space",
+    badge: "Портфолио",
+    link:  "https://asix.space/creator/denis_s"
+  },
+
+  {
+    type:  "video",
+    img:   "profile.jpg",
+    title: "Пример SCORM Курса",
+    text:  "Интерактивный курс с поддержкой SCORM",
+    badge: "SCORM",
+    link:  "https://arlekincd-hash.github.io/I-message/"
   }
 
 
@@ -66,3 +85,42 @@ const WORKS = [
   //   и вставь новый блок { ... } здесь
 
 ];
+
+/* ============================================================
+   Рендер карточек работ
+   ============================================================ */
+function renderWorks(track){
+  if(!track || !Array.isArray(WORKS)) return;
+  
+  track.innerHTML = WORKS.map(w=>{
+    const isVideo = w.type === 'video';
+    const badgeClass = isVideo ? 'badge-video' : 'badge-photo';
+    const badge = w.badge ? `<span class="work-badge ${badgeClass}">${w.badge}</span>` : '';
+    
+    // Кнопка "Еще больше слайдов..." для карточки со слайдами
+    const extraBtn = w.extraLink 
+      ? `<a href="${w.extraLink}" target="_blank" rel="noopener" class="extra-slides-btn" onclick="event.stopPropagation()">Еще больше слайдов...</a>` 
+      : '';
+    
+    const media = isVideo
+      ? `<div class="work-media"><img src="${w.img}" alt="${w.title||''}"></div>
+         <div class="work-play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>`
+      : `<div class="work-media"><img src="${w.img}" alt="${w.title||''}"></div>`;
+    
+    return `
+      <article class="work-card" data-type="${w.type}"
+               ${!isVideo ? `data-full="${w.img}"` : ''}
+               ${w.link   ? `data-link="${w.link}"` : ''}
+               data-title="${w.title||''}">
+        <div class="work-inner">
+          ${badge}
+          ${media}
+          <div class="work-body">
+            <h3>${w.title||''}</h3>
+            <p>${w.text||''}</p>
+            ${extraBtn}
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+}

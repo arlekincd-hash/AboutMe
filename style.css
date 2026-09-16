@@ -243,6 +243,16 @@ section{padding:70px clamp(16px,5vw,60px);max-width:1200px;margin:0 auto}
 .work-body h3{font-size:1.15rem;margin-bottom:4px}
 .work-body p{font-size:.86rem;color:var(--muted)}
 
+/* Кнопка "Еще больше слайдов..." */
+.extra-slides-btn{
+  display:inline-block;margin-top:10px;padding:6px 12px;
+  font-size:.78rem;font-weight:500;color:#c96f4a;
+  background:rgba(201,111,74,.08);border:1px solid rgba(201,111,74,.25);
+  border-radius:8px;text-decoration:none;transition:.2s;
+  transform:translateZ(15px)
+}
+.extra-slides-btn:hover{background:rgba(201,111,74,.18);color:#a55a3e}
+
 .work-badge{
   position:absolute;top:12px;left:12px;z-index:4;
   font-size:.72rem;font-weight:600;letter-spacing:.3px;
