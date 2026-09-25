@@ -59,15 +59,6 @@ const WORKS = [
     text:  "Видео собранное с помощью ИИ-инструментов.",
     badge: "Видео",
     link:  "https://asix.space/videos/971?ref=jkwtxsd2"     // ← сюда вставь ссылку на своё видео
-  },
-
-  {
-    type:  "video",
-    img:   "profile.jpg",
-    title: "Видео",
-    text:  "Видео собранное с помощью ИИ-инструментов.",
-    badge: "Видео",
-    link:  "https://asix.space/videos/971?ref=jkwtxsd2"     // ← сюда вставь ссылку на своё видео
   }
 
   // ← чтобы добавить ещё — поставь запятую после } выше
