@@ -28,7 +28,7 @@ const WORKS = [
    
    {
     type:  "video",
-    img:   "Логика Молока Нейрохакатон-Обложка.jpg",
+    img:   "Black square.png",
     title: "Motion",
     text:  "Обучающее видео в стиле Motion анимации.",
     badge: "Motion",
