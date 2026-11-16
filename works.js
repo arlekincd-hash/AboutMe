@@ -26,6 +26,15 @@ const WORKS = [
     link:  "https://asix.space/videos/5108?ref=jkwtxsd2"     // ← сюда вставь ссылку на своё видео
   },
    
+   {
+    type:  "video",
+    img:   "Логика Молока Нейрохакатон-Обложка.jpg",
+    title: "Motion",
+    text:  "Обучающее видео в стиле Motion анимации.",
+    badge: "Motion",
+    link:  "Black square_480p_Low.mp4"     // ← сюда вставь ссылку на своё видео
+  },
+   
   {
     type:  "photo",
     img:   "slide.jpg",
